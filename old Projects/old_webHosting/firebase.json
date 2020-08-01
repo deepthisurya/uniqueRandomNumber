@@ -1,0 +1,37 @@
+{
+    "hosting": {
+        "public": "public",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [{
+                "source": "/",
+                "function": "app"
+            },
+            {
+                "source": "/Home",
+                "function": "app"
+            },
+            {
+                "source": "/blogs",
+                "function": "app"
+            },
+            {
+                "source": "/blog",
+                "function": "app"
+            },
+            {
+                "source": "/404.html",
+                "headers": [{
+                    "key": "Cache-Control",
+                    "value": "max-age=300"
+                }]
+            }
+        ]
+    },
+    "database": {
+        "rules": "database.rules.json"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "firestore": {
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
+    },
+    "hosting": {
+        "public": "public",
+        "rewrites": [{
+                "source": "/",
+                "function": "app"
+            },
+            {
+                "source": "/home",
+                "function": "app"
+            },
+            {
+                "source": "/404.html",
+                "headers": [{
+                    "key": "Cache-Control",
+                    "value": "max-age=300"
+                }]
+            }
+        ],
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }
+}
